@@ -45,66 +45,47 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
       {/* Hero Section */}
-      <section id="hero" className="section-padding min-h-screen flex items-center bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#1A1F2C]">Your Name</h1>
-          <p className="text-xl md:text-2xl text-[#403E43] mb-8">
-            Full Stack Developer
-          </p>
-          <p className="text-lg mb-8 max-w-2xl text-[#666666]">
-            A passionate developer focused on creating intuitive and efficient web applications.
-          </p>
-          <div className="flex gap-4">
-            <Button variant="outline" size="icon" className="hover:bg-[#F1F0FB] transition-all duration-300">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
-              </a>
+      <section className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-r from-[#accbee] to-[#e7f0fd]">
+        <div className="max-w-3xl mx-auto text-center fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#2d3436]">Your Name</h1>
+          <p className="text-xl md:text-2xl mb-8 text-[#2d3436]">Full Stack Developer</p>
+          <div className="flex justify-center gap-4">
+            <Button variant="outline" size="icon" className="bg-white/80 hover:bg-white">
+              <Github className="h-5 w-5" />
             </Button>
-            <Button variant="outline" size="icon" className="hover:bg-[#F1F0FB] transition-all duration-300">
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
-              </a>
+            <Button variant="outline" size="icon" className="bg-white/80 hover:bg-white">
+              <Linkedin className="h-5 w-5" />
             </Button>
-            <Button variant="outline" size="icon" className="hover:bg-[#F1F0FB] transition-all duration-300">
-              <a href="mailto:your.email@example.com">
-                <Mail className="h-5 w-5" />
-              </a>
+            <Button variant="outline" size="icon" className="bg-white/80 hover:bg-white">
+              <Mail className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Experience Summary Section */}
-      <section id="experience" className="section-padding bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Experience Highlights</h2>
-          <div className="space-y-6">
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-gray-200">
-              <h3 className="text-xl font-semibold mb-2 text-[#403E43]">Senior Developer</h3>
-              <p className="text-[#666666]">
-                Led development of multiple high-impact projects, improving system efficiency by 40%
-              </p>
-            </Card>
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-gray-200">
-              <h3 className="text-xl font-semibold mb-2 text-[#403E43]">Tech Lead</h3>
-              <p className="text-[#666666]">
-                Managed a team of 5 developers, delivering projects on time and within budget
-              </p>
+      {/* Experience Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Experience Highlights</h2>
+          <div className="space-y-4">
+            <Card className="p-6 bg-white/80 backdrop-blur">
+              <h3 className="text-xl font-semibold mb-2">Senior Developer</h3>
+              <p className="text-gray-600">Led development of multiple high-impact projects</p>
             </Card>
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="section-padding bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Skills</h2>
+      <section className="py-20 px-4 bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill, index) => (
-              <Card key={index} className="p-4 text-center hover:shadow-md transition-all duration-300 bg-white/80 backdrop-blur-sm border-gray-200">
-                <span className="text-[#666666]">{skill}</span>
+              <Card key={index} className="p-4 text-center bg-white/80 backdrop-blur">
+                {skill}
               </Card>
             ))}
           </div>
@@ -112,25 +93,22 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section-padding bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Projects</h2>
+      <section className="py-20 px-4 bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="p-6 hover:shadow-md transition-all duration-300 border-gray-200">
+              <Card key={index} className="p-6 bg-white/80 backdrop-blur">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold text-[#403E43]">{project.title}</h3>
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-5 w-5 text-[#666666] hover:text-[#403E43]" />
+                    <ExternalLink className="h-5 w-5" />
                   </a>
                 </div>
-                <p className="text-[#666666] mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-sm bg-gray-100 px-2 py-1 rounded text-[#666666]"
-                    >
+                    <span key={techIndex} className="text-sm bg-gray-100 px-2 py-1 rounded">
                       {tech}
                     </span>
                   ))}
@@ -142,16 +120,14 @@ const Index = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="section-padding bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Certifications</h2>
-          <div className="space-y-6">
+      <section className="py-20 px-4 bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Certifications</h2>
+          <div className="space-y-4">
             {certifications.map((cert, index) => (
-              <Card key={index} className="p-6 hover:shadow-md transition-all duration-300 border-gray-200">
-                <h3 className="text-xl font-semibold mb-2 text-[#403E43]">{cert.name}</h3>
-                <p className="text-[#666666]">
-                  {cert.issuer} • {cert.date}
-                </p>
+              <Card key={index} className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-xl font-semibold mb-2">{cert.name}</h3>
+                <p className="text-gray-600">{cert.issuer} • {cert.date}</p>
               </Card>
             ))}
           </div>
@@ -159,16 +135,14 @@ const Index = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="section-padding bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Education</h2>
-          <div className="space-y-6">
+      <section className="py-20 px-4 bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+          <div className="space-y-4">
             {education.map((edu, index) => (
-              <Card key={index} className="p-6 hover:shadow-md transition-all duration-300 border-gray-200">
-                <h3 className="text-xl font-semibold mb-2 text-[#403E43]">{edu.degree}</h3>
-                <p className="text-[#666666]">
-                  {edu.institution} • {edu.year}
-                </p>
+              <Card key={index} className="p-6 bg-white/80 backdrop-blur">
+                <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
+                <p className="text-gray-600">{edu.institution} • {edu.year}</p>
               </Card>
             ))}
           </div>
@@ -176,13 +150,12 @@ const Index = () => {
       </section>
 
       {/* Acknowledgements Section */}
-      <section id="acknowledgements" className="section-padding bg-gradient-to-r from-[#e6e9f0] to-[#eef1f5]">
-        <div className="max-w-4xl mx-auto fade-in">
-          <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Acknowledgements</h2>
-          <Card className="p-6 hover:shadow-md transition-all duration-300 border-gray-200">
-            <p className="text-[#666666]">
-              Special thanks to all mentors, colleagues, and organizations that have contributed to my professional growth.
-              Your guidance and support have been invaluable in shaping my career journey.
+      <section className="py-20 px-4 bg-gradient-to-r from-[#F2FCE2] to-[#FEF7CD]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">Acknowledgements</h2>
+          <Card className="p-6 bg-white/80 backdrop-blur">
+            <p className="text-gray-600">
+              Special thanks to all mentors and colleagues who have contributed to my professional growth.
             </p>
           </Card>
         </div>
