@@ -18,22 +18,22 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#e6e9f0] to-[#eef1f5]">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#8B5CF6] to-[#A78BFA]">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-white">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="p-6 bg-white/70 backdrop-blur hover:bg-white/80 transition-all">
+            <Card key={index} className="p-6 bg-white/10 backdrop-blur hover:bg-white/20 transition-all border-white/20">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-5 w-5" />
+                  <ExternalLink className="h-5 w-5 text-white" />
                 </a>
               </div>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+              <p className="text-white/80 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className="text-sm bg-gray-100/80 backdrop-blur px-2 py-1 rounded">
+                  <span key={techIndex} className="text-sm bg-white/20 backdrop-blur px-2 py-1 rounded text-white">
                     {tech}
                   </span>
                 ))}

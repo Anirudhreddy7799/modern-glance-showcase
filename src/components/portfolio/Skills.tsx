@@ -7,12 +7,12 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#fdfcfb] to-[#e2d1c3]">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#F97316] to-[#FB923C]">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-white">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skills.map((skill, index) => (
-            <Card key={index} className="p-4 text-center bg-white/70 backdrop-blur hover:bg-white/80 transition-all">
+            <Card key={index} className="p-4 text-center bg-white/10 backdrop-blur hover:bg-white/20 transition-all border-white/20 text-white">
               {skill}
             </Card>
           ))}
