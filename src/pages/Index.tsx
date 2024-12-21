@@ -45,6 +45,16 @@ const Index = () => {
           animation: 'patternMove 30s linear infinite reverse'
         }}
       />
+
+      {/* Random lines and shapes background */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='100' y2='100' stroke='%23ffffff' stroke-width='0.5'/%3E%3Cline x1='100' y1='0' x2='0' y2='100' stroke='%23ffffff' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23ffffff' stroke-width='0.5'/%3E%3Crect x='20' y='20' width='60' height='60' fill='none' stroke='%23ffffff' stroke-width='0.5'/%3E%3Cpolygon points='50,10 90,90 10,90' fill='none' stroke='%23ffffff' stroke-width='0.5'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
+          animation: 'patternMove 40s linear infinite'
+        }}
+      />
       
       {/* Content container with backdrop blur */}
       <div className="relative text-white">
