@@ -10,7 +10,7 @@ const Education = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#0EA5E9] to-[#7DD3FC]">
+    <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">Education</h2>
         <div className="space-y-4">

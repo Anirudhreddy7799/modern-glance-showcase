@@ -8,14 +8,18 @@ import Acknowledgements from "@/components/portfolio/Acknowledgements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef]">
-      <Hero />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Education />
-      <Acknowledgements />
+    <div className="min-h-screen bg-gradient-to-br from-[#8B5CF6] to-[#D946EF]">
+      <div className="relative">
+        <Hero />
+        <div className="backdrop-blur-sm bg-white/5">
+          <Experience />
+          <Skills />
+          <Projects />
+          <Certifications />
+          <Education />
+          <Acknowledgements />
+        </div>
+      </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[#F97316] to-[#FDBA74]">
+    <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">Certifications</h2>
         <div className="space-y-4">
