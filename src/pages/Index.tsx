@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen relative">
       {/* Modern gradient overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(102.3deg,_rgba(2,0,36,1)_0%,_rgba(9,9,121,1)_35%,_rgba(0,212,255,1)_100%)] opacity-90" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#243949_0%,#517fa4_33%,#2c5364_66%,#0f2027_100%)] opacity-90"></div>
       
       {/* Animated background patterns */}
       <div 
