@@ -9,13 +9,12 @@ import BackgroundEffects from "@/components/portfolio/BackgroundEffects";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-hidden">
       <BackgroundEffects />
       
-      {/* Content container with enhanced text highlight */}
       <div className="relative text-white">
         <Hero />
-        <div className="bg-white/5">
+        <div className="bg-black/10 backdrop-blur-sm">
           <Experience />
           <Skills />
           <Projects />
