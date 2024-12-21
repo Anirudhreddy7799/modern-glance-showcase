@@ -51,6 +51,15 @@ html {
   }
 }
 
+@keyframes patternMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
 /* Add text outline styles */
 .text-outline {
   text-shadow: 
