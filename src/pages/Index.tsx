@@ -8,7 +8,7 @@ import Acknowledgements from "@/components/portfolio/Acknowledgements";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#8B5CF6] to-[#D946EF]">
+    <div className="min-h-screen bg-[linear-gradient(225deg,_#FFE29F_0%,_#FFA99F_48%,_#FF719A_100%)]">
       <div className="relative">
         <Hero />
         <div className="backdrop-blur-sm bg-white/5">
