@@ -526,7 +526,7 @@
 					payload: null
 				}))
 			},
-      q = (o, d) => document.elementFromPoint(o, d)
+      q = (o, d) => document.elementFromPoint(o, d),
 		
 
 var X = (o, d) => {
