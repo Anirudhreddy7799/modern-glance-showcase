@@ -526,81 +526,80 @@
 					payload: null
 				}))
 			},
-			q = (o, d) => document.elementFromPoint(o, d),
-			X = o => {
-				var d;
-				try {
-					if (!(o != null && o.origin) || !((d = o == null ? void 0 : o.data) != null && d.type) || !e.ALLOWED_ORIGINS.includes(o.origin)) return;
-					switch (o.data.type) {
-						case "TOGGLE_SELECTOR":
-							let m = !!o.data.payload;
-							if (t.isActive !== m)
-								if (t.isActive = m, t.isActive) {
-									let p = q(t.mouseX, t.mouseY);
-									p && y({
-										target: p
-									}), B()
-								} else F(), document.querySelectorAll('[style*="outline"], [style*="background-color"]').forEach(S => {
-									S.classList.contains("gpt-selected-element") || (n(S), S.style.cursor = "")
-								}), t.reset();
-							break;
-						case "UPDATE_SELECTED_ELEMENTS":
-							if (!Array.isArray(o.data.payload)) {
-								console.error("Invalid payload for UPDATE_SELECTED_ELEMENTS");
-								return
-							}
-							let h = o.data.payload;
-							document.querySelectorAll(".gpt-selected-element").forEach(p => {
-								p.classList.remove("gpt-selected-element"), p !== t.hoveredElement && n(p)
-							}), h.forEach(p => {
-								if (!(p != null && p.filePath) || !(p != null && p.fileName) || !(p != null && p.lineNumber)) {
-									console.error("Invalid element data:", p);
-									return
-								}
-								let {
-									filePath: S,
-									fileName: g,
-									lineNumber: H
-								} = p, N = `[data-component-path="${S}"][data-component-file="${g}"][data-component-line="${H}"]`;
-								document.querySelectorAll(N).forEach(b => {
-									b.classList.add("gpt-selected-element"), Math.abs(b.getBoundingClientRect().width - window.innerWidth) < 5 ? (b.style.outline = `2px solid ${e.HIGHLIGHT_COLOR}`, b.style.outlineOffset = e.HIGHLIGHT_STYLE.FULL_WIDTH.OFFSET) : (b.style.outline = `2px solid ${e.HIGHLIGHT_COLOR}`, b.style.outlineOffset = "0"), b.style.backgroundColor = `${e.HIGHLIGHT_BG}`
-								})
-							});
-							break;
-						case "GET_SELECTOR_STATE":
-							s({
-								type: "SELECTOR_STATE_RESPONSE",
-								payload: {
-									isActive: t.isActive
-								}
-							});
-							break;
-						default:
-							console.warn("Unknown message type:", o.data.type)
-					}
-				} catch (m) {
-					console.error("Error handling message:", m), F(), t.reset()
-				}
-			},
-			J = o => {
-				t.mouseX = o.clientX, t.mouseY = o.clientY
-			},
-			Q = () => {
-				s({
-					type: "REQUEST_PICKER_STATE"
-				}), s({
-					type: "REQUEST_SELECTED_ELEMENTS"
-				})
-			};
-		(() => {
-			try {
-				f(), window.addEventListener("message", X), document.addEventListener("keydown", z), document.addEventListener("mousemove", J), s({
-					type: "SELECTOR_SCRIPT_LOADED"
-				}), Q()
-			} catch (o) {
-				console.error("Failed to initialize selector script:", o)
-			}
-		})()
+      q = (o, d) => document.elementFromPoint(o, d)
+		
+
+var X = (o, d) => {
+  var i;
+  try {
+    if (!(o != null && o.origin) || !((i = o == null ? void 0 : o.data) != null && i.type) || !e.ALLOWED_ORIGINS.includes(o.origin)) return;
+    switch (o.data.type) {
+      case "TOGGLE_SELECTOR":
+        let m = !!o.data.payload;
+        if (t.isActive !== m)
+          if (t.isActive = m, t.isActive) {
+            let p = q(t.mouseX, t.mouseY);
+            p && y({
+              target: p
+            }), B()
+          } else F(), document.querySelectorAll('[style*="outline"], [style*="background-color"]').forEach(S => {
+            S.classList.contains("gpt-selected-element") || (n(S), S.style.cursor = "")
+          }), t.reset();
+        break;
+      case "UPDATE_SELECTED_ELEMENTS":
+        if (!Array.isArray(o.data.payload)) {
+          console.error("Invalid payload for UPDATE_SELECTED_ELEMENTS");
+          return;
+        }
+        let h = o.data.payload;
+        document.querySelectorAll(".gpt-selected-element").forEach(p => {
+          p.classList.remove("gpt-selected-element"), p !== t.hoveredElement && n(p)
+        });
+        h.forEach(p => {
+          if (!(p != null && p.filePath) || !(p != null && p.fileName) || !(p != null && p.lineNumber)) {
+            console.error("Invalid element data:", p);
+            return;
+          }
+          let {
+            filePath: S,
+            fileName: g,
+            lineNumber: H
+          } = p, N = `[data-component-path="${S}"][data-component-file="${g}"][data-component-line="${H}"]`;
+          document.querySelectorAll(N).forEach(b => {
+            b.classList.add("gpt-selected-element"), Math.abs(b.getBoundingClientRect().width - window.innerWidth) < 5 ? (b.style.outline = `2px solid ${e.HIGHLIGHT_COLOR}`, b.style.outlineOffset = e.HIGHLIGHT_STYLE.FULL_WIDTH.OFFSET) : (b.style.outline = `2px solid ${e.HIGHLIGHT_COLOR}`, b.style.outlineOffset = "0"), b.style.backgroundColor = `${e.HIGHLIGHT_BG}`
+          })
+        });
+        break;
+      case "GET_SELECTOR_STATE":
+        s({
+          type: "SELECTOR_STATE_RESPONSE",
+          payload: {
+            isActive: t.isActive
+          }
+        });
+        break;
+      case "REQUEST_PICKER_STATE":
+        s({
+          type: "PICKER_STATE_RESPONSE",
+          payload: {
+            isActive: t.isActive
+          }
+        });
+        break;
+      case "REQUEST_SELECTED_ELEMENTS":
+        s({
+          type: "SELECTED_ELEMENTS_RESPONSE",
+          payload: []
+        });
+        break;
+      default:
+        console.warn("Unknown message type:", o.data.type)
+    }
+  } catch (m) {
+    console.error("Error handling message:", m), F(), t.reset()
+  }
+};
+
 	})();
 	var Y = () => {
 		let e = document.createElement("script");
