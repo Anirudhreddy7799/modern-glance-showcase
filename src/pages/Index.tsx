@@ -21,7 +21,7 @@ const Index = () => {
       />
       
       {/* Content container with backdrop blur */}
-      <div className="relative">
+      <div className="relative text-white">
         <Hero />
         <div className="backdrop-blur-sm bg-white/5">
           <Experience />
