@@ -56,10 +56,10 @@ const Index = () => {
         }}
       />
       
-      {/* Content container with backdrop blur */}
+      {/* Content container with reduced backdrop blur */}
       <div className="relative text-white">
         <Hero />
-        <div className="backdrop-blur-sm bg-white/5">
+        <div className="bg-white/5">
           <Experience />
           <Skills />
           <Projects />
