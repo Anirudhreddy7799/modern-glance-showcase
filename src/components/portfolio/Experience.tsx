@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { portfolioData } from "@/data/portfolio";
 
 const Experience = () => {
   return (
@@ -6,10 +7,12 @@ const Experience = () => {
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center text-white text-outline">Experience Highlights</h2>
         <div className="space-y-4">
-          <Card className="p-6 bg-white/10 backdrop-blur hover:bg-white/20 transition-all border-white/20">
-            <h3 className="text-xl font-semibold mb-2 text-white text-outline-sm">Senior Developer</h3>
-            <p className="text-white/80">Led development of multiple high-impact projects</p>
-          </Card>
+          {portfolioData.experience.map((exp, index) => (
+            <Card key={index} className="p-6 bg-white/10 backdrop-blur hover:bg-white/20 transition-all border-white/20">
+              <h3 className="text-xl font-semibold mb-2 text-white text-outline-sm">{exp.title}</h3>
+              <p className="text-white/80">{exp.description}</p>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

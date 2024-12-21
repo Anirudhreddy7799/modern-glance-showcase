@@ -1,28 +1,14 @@
 import { ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { portfolioData } from "@/data/portfolio";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Project 1",
-      description: "A brief description of project 1",
-      technologies: ["React", "Node.js", "MongoDB"],
-      link: "#"
-    },
-    {
-      title: "Project 2",
-      description: "A brief description of project 2",
-      technologies: ["TypeScript", "Express", "PostgreSQL"],
-      link: "#"
-    }
-  ];
-
   return (
     <section className="py-20 px-4">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center text-white text-outline">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          {portfolioData.projects.map((project, index) => (
             <Card key={index} className="p-6 bg-white/10 backdrop-blur hover:bg-white/20 transition-all border-white/20">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-semibold text-white text-outline-sm">{project.title}</h3>
