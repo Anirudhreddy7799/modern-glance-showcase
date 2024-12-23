@@ -5,26 +5,23 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-<<<<<<< HEAD
-=======
   base: '/modern-glance-showcase/',  // Add this line - replace with your repo name
->>>>>>> a7e1139ad682b6a002d1965f59ad9733a9e65d6c
   server: {
     host: "::",
     port: 8080,
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-<<<<<<< HEAD
+  build: {
+    rollupOptions: {
+      input: '/Users/anirudhreddy/Downloads/modern-glance-showcase-main/src/main.tsx',
+    },
+  },
 }));
-=======
-}));
->>>>>>> a7e1139ad682b6a002d1965f59ad9733a9e65d6c
